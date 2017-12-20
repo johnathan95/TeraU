@@ -1,0 +1,119 @@
+﻿@model IEnumerable<TeraU.Models.Movie>
+@{
+    ViewBag.Title = "TeraU";
+    ViewBag.Description = "Home Page";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-5">
+        <div class="box box-default">
+            <div class="box-header">
+                <h3 class="box-title">Welcome to TeraU - a TERA Universe website</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="form-group">
+                <img src="~/Content/img/logo1.png" class="rounded" style=" height: 260px; width: 60%; " alt="TeraU">
+            </div>
+            </div>
+    </div>
+    <div class="col-xs-12 col-md-7">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h3 class="box-title">Join our Universe</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div id="fb-root">
+                            </div>
+                            <div class="fb-like-box" data-href="https://www.facebook.com/TeraUniverse/"
+                                 data-width="270" data-show-faces="true" data-stream="false" data-border-color="#d9509c"
+                                 data-header="true" style="padding-bottom: 10px;" async="false">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <script src="https://apis.google.com/js/platform.js"></script>
+
+                            <div class="g-ytsubscribe" data-channelid="UCZ-lyEtYf1u5dQNijALIZ2g" data-layout="full" data-count="default"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="box box-body">
+            <div class="box-header">
+                TERA Univere Facebook feed
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <div id="fb-root"></div>
+                    <script>
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11&appId=345201402341688';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-page" data-href="https://www.facebook.com/TeraUniverse/" data-tabs="timeline,messages" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/TeraUniverse/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/TeraUniverse/">TERA Universe</a></blockquote></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">Latest trailers</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                
+                <div class="form-group">
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/6ZfuNTqbHE8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">Latest indian movies trailers</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+
+                <div class="form-group">
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/eD_kKt_JeBw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+       (function (d, s, id) {
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+           fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>

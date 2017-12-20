@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TeraU.Models.Genre>
+
+@{
+    ViewBag.Title = "Genre List";
+}
+
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Genre of movies</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <p>
+                            @Html.ActionLink("Create New", "Create")
+                        </p>
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Genre
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.name_genre)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_genre }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.id_genre }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.id_genre })
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

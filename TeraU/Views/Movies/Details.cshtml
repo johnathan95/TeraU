@@ -1,0 +1,96 @@
+﻿@model TeraU.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_movie }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.movie) (@Html.DisplayFor(model => model.year))</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.movie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.movie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <dt>
+            actor name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor.name_actor)
+        </dd>
+
+        <dt>
+            genre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre.name_genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poster)
+        </dt>
+
+        <dd>
+            <div class="col-xs-10 col-md-7">
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">@Html.DisplayFor(model => model.movie) poster</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                    @{
+                                        if (Model.poster != null)
+                                        {
+                                            var base64 = Convert.ToBase64String(Model.poster);
+                                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                            <img src="@imgSrc" height="500" width="380" />
+                                        }
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dd>
+
+    </dl>
+</div>

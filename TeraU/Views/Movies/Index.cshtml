@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TeraU.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">TERA Universe promotional movies</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <p> @Html.ActionLink("Create New", "Create") </p>
+                        <table class="table">
+                            <tr>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Actor.name_actor)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Genre.name_genre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.movie)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.director)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.year)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.description)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @{
+                                            if (item.poster != null)
+                                            {
+                                                var base64 = Convert.ToBase64String(item.poster);
+                                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                                <img src="@imgSrc" height="90" width="70" />
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Actor.name_actor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Genre.name_genre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.movie)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.director)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.year)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.description)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_movie }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.id_movie }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.id_movie })
+                                    </td>
+                                </tr>
+                                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
