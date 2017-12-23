@@ -162,10 +162,10 @@ namespace TeraU.Controllers
             }
             var movieToUpdate = db.Movies.Find(id);
             if (TryUpdateModel(movieToUpdate, "",
-               new string[] { "movie", "id_genre", "id_actor","director","year","description","poster" }))
+               new string[] { "movie", "id_genre", "id_actor","director","year","description" }))
             {
                 try
-                {
+                {   /*
                     byte[] fileData = null;
 
                     if ((movieToUpdate.Files.Count > 0) && (movieToUpdate.Files != null))
@@ -175,7 +175,7 @@ namespace TeraU.Controllers
                             fileData = binaryReader.ReadBytes(movieToUpdate.Files[0].ContentLength);
                         }
                     }
-                    movieToUpdate.poster = fileData;
+                    movieToUpdate.poster = fileData;*/
                     db.SaveChanges();
 
                     return RedirectToAction("Index");
